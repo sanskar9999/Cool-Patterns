@@ -1,86 +1,277 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
   <style>
-body {
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: black;
-    overflow: hidden;
-}
-.container {
-    font-size: 10px;
-    width: 40em;
-    height: 40em;
-    position: relative;
-}
-.sun {
-    position: absolute;
-    top: 15em;
-    left: 15em;
-    width: 10em;
-    height: 10em;
-    background-color: yellow;
-    border-radius: 50%;
-    box-shadow: 0 0 3em white;
-}
-.earth,.moon {
-    position: absolute;
-    border-style: solid;
-    border-color: white transparent transparent transparent;
-    border-width: 0.1em 0.1em 0 0;
-    border-radius: 50%;
-}
-.earth {
-    top: 5em;
-    left: 5em;
-    width: 30em;
-    height: 30em; 
-    animation: orbit 36.5s linear infinite;   
-}
-.moon {
-    top: 0;
-    right: 0;
-    width: 8em;
-    height: 8em; 
-    animation: orbit 2.7s linear infinite;
-}
-.earth::before,
-.moon::before {
-    content: '';
-    position: absolute;
-    border-radius: 50%;
-}
-.earth::before {
-    top: 2.8em;
-    right: 2.8em;
-    width: 3em;
-    height: 3em;
-    background-color: aqua;    
-}
-.moon::before {
-    top: 0.8em;
-    right: 0.2em;
-    width: 1.2em;
-    height: 1.2em;
-    background-color: silver;
-}
-@keyframes orbit {
-    to {
-        transform: rotate(360deg);
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: black;
+      overflow: hidden;
     }
-}
+
+    .container {
+      font-size: 10px;
+      width: 40em;
+      height: 40em;
+      position: relative;
+    }
+
+    .sun {
+      position: absolute;
+      top: 15em;
+      left: 15em;
+      width: 10em;
+      height: 10em;
+      background-color: yellow;
+      border-radius: 50%;
+      box-shadow: 0 0 3em white;
+    }
+
+    .planet {
+      position: absolute;
+      border-style: solid;
+      border-color: white transparent transparent transparent;
+      border-width: 0.1em 0.1em 0 0;
+    }
+
+    .planet::before {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    .mercury {
+      top: calc(15em - (0.1em /2));
+      left: calc(15em + (0.39au /2));
+      width: calc(0.39au);
+      height: calc(0.39au);
+      animation-name: orbit;
+      animation-duration: calc(87.97s /2);
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      z-index: -1;
+    }
+
+    .mercury::before {
+      top: calc((0.39au /2) - (0.38em /2));
+      right: calc((0.39au /2) - (0.38em /2));
+      width: calc(0.38em);
+      height: calc(0.38em);
+      background-color: gray;
+    }
+
+    .venus {
+      top: calc(15em - (0.1em /2));
+      left: calc(15em + (0.72au /2));
+      width: calc(0.72au);
+      height: calc(0.72au);
+      animation-name: orbit;
+      animation-duration: calc(224.70s /2);
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-delay: -112s;
+      z-index: -1;
+    }
+
+    .venus::before {
+      top: calc((0.72au /2) - (0.95em /2));
+      right: calc((0.72au /2) - (0.95em /2));
+      width: calc(0.95em);
+      height: calc(0.95em);
+      background-color: brown;
+    }
+
+    .earth {
+      top: calc(15em - (0.1em /2));
+      left: calc(15em + (1au /2));
+      width: calc(1au);
+      height: calc(1au);
+      animation-name: orbit;
+      animation-duration: calc(365s /2);
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      z-index: -1;
+    }
+
+    .moon {
+      position: absolute;
+      top: calc((1au /2) - (0.08em /2));
+      right: calc((1au /2) - (0.08em /2));
+      width: calc(0.08au);
+      height: calc(0.08au);
+      border-style: solid;
+      border-color: white transparent transparent transparent;
+      border-width: calc(0.08em /4);
+      border-radius: 50%;
+      transform-origin: calc((1au /4) + (0.08au /4));
+      animation-name: orbit;
+      animation-duration: 27s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      z-index: -1;
+    }
+
+    .earth::before {
+      top: calc((1au /2) - (1em /2));
+      right: calc((1au /2) - (1em /2));
+      width: calc(1em);
+      height: calc(1em);
+      background-color: aqua;
+    }
+
+    .moon::before {
+      top: calc((0.08au /2) - (0.27em /2));
+      right: calc((0.08au /2) - (0.27em /2));
+      width: calc(0.27em);
+      height: calc(0.27em);
+      background-color: silver;
+    }
+
+    .mars {
+      top: calc(15em - (0.1em /2));
+      left: calc(15em + (1.52au /2));
+      width: calc(1.52au);
+      height: calc(1.52au);
+      animation-name: orbit;
+      animation-duration: calc(687s /2);
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-delay: -343s;
+      z-index: -1;
+    }
+
+    .mars::before {
+      top: calc((1.52au /2) - (0.53em /2));
+      right: calc((1.52au /2) - (0.53em /2));
+      width: calc(0.53em);
+      height: calc(0.53em);
+      background-color: red;
+    }
+
+    .jupiter {
+      top: calc(15em - (0.1em /2));
+      left: calc(15em + (5.2au /2));
+      width: calc(5.2au);
+      height: calc(5.2au);
+      animation-name: orbit;
+      animation-duration: calc(4333s /2);
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-delay: -2166s;
+      z-index: -1;
+    }
+
+    .jupiter::before {
+      top: calc((5.2au /2) - (11.21em /2));
+      right: calc((5.2au /2) - (11.21em /2));
+      width: calc(11.21em);
+      height: calc(11.21em);
+      background-color: brown;
+    }
+
+    .saturn {
+      top: calc(15em - (0.1em /2));
+      left: calc(15em + (9.54au /2));
+      width: calc(9.54au);
+      height: calc(9.54au);
+      animation-name: orbit;
+      animation-duration: calc(10759s /2);
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-delay: -5379s;
+      z-index: -1;
+    }
+
+    .saturn::before {
+      top: calc((9.54au /2) - (9.45em /2));
+      right: calc((9.54au /2) - (9.45em /2));
+      width: calc(9.45em);
+      height: calc(9.45em);
+      background-color: brown;
+    }
+
+    .saturn::after {
+      content: '';
+      position: absolute;
+      top: calc((9.54au /4) - (10em));
+      right: (9.54au /4);
+      width: (20em);
+      height: (20em);
+      border-radius: (50%);
+      border-style: solid;
+      border-color: white transparent transparent transparent;
+      border-width: (0.5em);
+      transform-origin: (10em 10em);
+      transform: rotate(-45deg);
+      z-index: -1;
+    }
+
+    .uranus {
+      top: calc(15em - (0.1em /2));
+      left: calc(15em + (19.22au /2));
+      width: calc(19.22au);
+      height: calc(19.22au);
+      animation-name: orbit;
+      animation-duration: calc(30687s /2);
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-delay: -15343s;
+      z-index: -1;
+    }
+
+    .uranus::before {
+      top: calc((19.22au /2) - (4em /2));
+      right: calc((19.22au /2) - (4em /2));
+      width: calc(4em);
+      height: calc(4em);
+      background-color: cyan;
+    }
+
+    .neptune {
+      top: calc(15em - (0.1em /2));
+      left: calc(15em + (30.06au /2));
+      width: calc(30.06au);
+      height: calc(30.06au);
+      animation-name: orbit;
+      animation-duration: calc(60190s / 3);
+      /* divided by 3 to fit the screen */
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-delay: -30095s;
+      z-index: -1;
+    }
+
+    .neptune::before {
+      top: calc((30.06au /2) - (3.88em /2));
+      right: calc((30.06au /2) - (3.88em /2));
+      width: calc(3.88em);
+      height: calc(3.88em);
+      background-color: blue;
+    }
+
+    @keyframes orbit {
+      to {
+        transform: rotate(360deg);
+      }
+    }
   </style>
 </head>
 <body>
-    <div class="container">
-        <div class="sun"></div>
-        <div class="earth">
-          <div class="moon"></div>
-        </div>
-      </div>
+  <div class="container">
+    <div class="sun"></div>
+    <div class="planet mercury"></div>
+    <div class="planet venus"></div>
+    <div class="planet earth">
+      <div class="moon"></div>
+    </div>
+    <div class="planet mars"></div>
+    <div class="planet jupiter"></div>
+    <div class="planet saturn"></div>
+    <div class="planet uranus"></div>
+    <div class="planet neptune"></div>
+  </div>
 </body>
 </html>
