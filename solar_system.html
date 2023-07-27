@@ -14,17 +14,17 @@
 
     .container {
       font-size: 10px;
-      width: 40em;
-      height: 40em;
+      width: 80em;
+      height: 80em;
       position: relative;
     }
 
     .sun {
       position: absolute;
-      top: 15em;
-      left: 15em;
-      width: 10em;
-      height: 10em;
+      top: calc(50% - (5em /2));
+      left: calc(50% - (5em /2));
+      width: 5em;
+      height: 5em;
       background-color: yellow;
       border-radius: 50%;
       box-shadow: 0 0 3em white;
@@ -34,7 +34,7 @@
       position: absolute;
       border-style: solid;
       border-color: white transparent transparent transparent;
-      border-width: 0.1em 0.1em 0 0;
+      border-width: calc(0.1em /2);
     }
 
     .planet::before {
@@ -44,51 +44,51 @@
     }
 
     .mercury {
-      top: calc(15em - (0.1em /2));
-      left: calc(15em + (0.39au /2));
-      width: calc(0.39au);
-      height: calc(0.39au);
+      top: calc(50% - (0.1em /4));
+      left: calc(50% + (0.39au * (1em /10) /2));
+      width: calc(0.39au * (1em /10));
+      height: calc(0.39au * (1em /10));
       animation-name: orbit;
       animation-duration: calc(87.97s /2);
       animation-timing-function: linear;
       animation-iteration-count: infinite;
-      z-index: -1;
+      z-index: 1;
     }
 
     .mercury::before {
-      top: calc((0.39au /2) - (0.38em /2));
-      right: calc((0.39au /2) - (0.38em /2));
+      top: calc((0.39au * (1em /10) /2) - (0.38em /2));
+      right: calc((0.39au * (1em /10) /2) - (0.38em /2));
       width: calc(0.38em);
       height: calc(0.38em);
       background-color: gray;
     }
 
     .venus {
-      top: calc(15em - (0.1em /2));
-      left: calc(15em + (0.72au /2));
-      width: calc(0.72au);
-      height: calc(0.72au);
+      top: calc(50% - (0.1em /4));
+      left: calc(50% + (0.72au * (1em /10) /2));
+      width: calc(0.72au * (1em /10));
+      height: calc(0.72au * (1em /10));
       animation-name: orbit;
       animation-duration: calc(224.70s /2);
       animation-timing-function: linear;
       animation-iteration-count: infinite;
       animation-delay: -112s;
-      z-index: -1;
+      z-index: 1;
     }
 
     .venus::before {
-      top: calc((0.72au /2) - (0.95em /2));
-      right: calc((0.72au /2) - (0.95em /2));
+      top: calc((0.72au * (1em /10) /2) - (0.95em /2));
+      right: calc((0.72au * (1em /10) /2) - (0.95em /2));
       width: calc(0.95em);
       height: calc(0.95em);
       background-color: brown;
     }
 
     .earth {
-      top: calc(15em - (0.1em /2));
-      left: calc(15em + (1au /2));
-      width: calc(1au);
-      height: calc(1au);
+      top: calc(50% - (0.1em /4));
+      left: calc(50% + (1au * (1em /10) /2));
+      width: calc(1au * (1em /10));
+      height: calc(1au * (1em /10));
       animation-name: orbit;
       animation-duration: calc(365s /2);
       animation-timing-function: linear;
@@ -98,15 +98,15 @@
 
     .moon {
       position: absolute;
-      top: calc((1au /2) - (0.08em /2));
-      right: calc((1au /2) - (0.08em /2));
-      width: calc(0.08au);
-      height: calc(0.08au);
+      top: calc((1au * (1em /10) /2) - (0.08em /4));
+      right: calc((1au * (1em /10) /2) - (0.08em /4));
+      width: calc(0.08au * (1em /10));
+      height: calc(0.08au * (1em /10));
       border-style: solid;
       border-color: white transparent transparent transparent;
-      border-width: calc(0.08em /4);
+      border-width: calc(0.08em /8);
       border-radius: 50%;
-      transform-origin: calc((1au /4) + (0.08au /4));
+      transform-origin: calc((1au * (1em /10) /4) + (0.08au * (1em /10) /4));
       animation-name: orbit;
       animation-duration: 27s;
       animation-timing-function: linear;
@@ -115,79 +115,80 @@
     }
 
     .earth::before {
-      top: calc((1au /2) - (1em /2));
-      right: calc((1au /2) - (1em /2));
+      top: calc((1au * (1em /10) /2) - (1em /2));
+      right: calc((1au * (1em /10) /2) - (1em /2));
       width: calc(1em);
       height: calc(1em);
       background-color: aqua;
     }
 
     .moon::before {
-      top: calc((0.08au /2) - (0.27em /2));
-      right: calc((0.08au /2) - (0.27em /2));
+      top: calc((0.08au * (1em /10) /2) - (0.27em /2));
+      right: calc((0.08au * (1em /10) /2) - (0.27em /2));
       width: calc(0.27em);
       height: calc(0.27em);
       background-color: silver;
     }
 
     .mars {
-      top: calc(15em - (0.1em /2));
-      left: calc(15em + (1.52au /2));
-      width: calc(1.52au);
-      height: calc(1.52au);
+      top: calc(50% - (0.1em /4));
+      left: calc(50% + (1.52au * (1em /10) /2));
+      width: calc(1.52au * (1em /10));
+      height: calc(1.52au * (1em /10));
       animation-name: orbit;
       animation-duration: calc(687s /2);
       animation-timing-function: linear;
       animation-iteration-count: infinite;
       animation-delay: -343s;
-      z-index: -1;
+      z-index: -2;
     }
 
     .mars::before {
-      top: calc((1.52au /2) - (0.53em /2));
-      right: calc((1.52au /2) - (0.53em /2));
+      top: calc((1.52au * (1em /10) /2) - (0.53em /2));
+      right: calc((1.52au * (1em /10) /2) - (0.53em /2));
       width: calc(0.53em);
       height: calc(0.53em);
       background-color: red;
     }
 
     .jupiter {
-      top: calc(15em - (0.1em /2));
-      left: calc(15em + (5.2au /2));
-      width: calc(5.2au);
-      height: calc(5.2au);
+      top: calc(50% - (0.1em /4));
+      left: calc(50% + (5.2au * (1em /10) /2));
+      width: calc(5.2au * (1em /10));
+      height: calc(5.2au * (1em /10));
       animation-name: orbit;
       animation-duration: calc(4333s /2);
       animation-timing-function: linear;
       animation-iteration-count: infinite;
       animation-delay: -2166s;
-      z-index: -1;
+      z-index: -3;
     }
 
     .jupiter::before {
-      top: calc((5.2au /2) - (11.21em /2));
-      right: calc((5.2au /2) - (11.21em /2));
+      top: calc((5.2au * (1em /10) /2) - (11.21em /2));
+      right: calc((5.2au * (1em /10) /2) - (11.21em /2));
       width: calc(11.21em);
       height: calc(11.21em);
       background-color: brown;
     }
 
     .saturn {
-      top: calc(15em - (0.1em /2));
-      left: calc(15em + (9.54au /2));
-      width: calc(9.54au);
-      height: calc(9.54au);
+      top: calc(50% - (0.1em /4));
+      left: calc(50% + (9.54au * (1em /10) /2));
+      width: calc(9.54au * (1em /10));
+      height: calc(9.54au * (1em /10));
       animation-name: orbit;
-      animation-duration: calc(10759s /2);
+      animation-duration: calc(10759s / 3);
+      /* divided by 3 to fit the screen */
       animation-timing-function: linear;
       animation-iteration-count: infinite;
-      animation-delay: -5379s;
-      z-index: -1;
+      animation-delay: -3586s;
+      z-index: -4;
     }
 
     .saturn::before {
-      top: calc((9.54au /2) - (9.45em /2));
-      right: calc((9.54au /2) - (9.45em /2));
+      top: calc((9.54au * (1em /10) / 3) / 2 - 9.45em / 2);
+      right: calc((9.54au * (1em /10) / 3) / 2 - 9.45em / 2);
       width: calc(9.45em);
       height: calc(9.45em);
       background-color: brown;
@@ -196,8 +197,8 @@
     .saturn::after {
       content: '';
       position: absolute;
-      top: calc((9.54au /4) - (10em));
-      right: (9.54au /4);
+      top: calc((9.54au * (1em /10) / 4) - 20em);
+      right: (9.54au * (1em /10) / 4);
       width: (20em);
       height: (20em);
       border-radius: (50%);
@@ -206,47 +207,48 @@
       border-width: (0.5em);
       transform-origin: (10em 10em);
       transform: rotate(-45deg);
-      z-index: -1;
+      z-index: -4;
     }
 
     .uranus {
-      top: calc(15em - (0.1em /2));
-      left: calc(15em + (19.22au /2));
-      width: calc(19.22au);
-      height: calc(19.22au);
+      top: calc(50% - (0.1em /4));
+      left: calc(50% + (19.22au * (1em /10) /2));
+      width: calc(19.22au * (1em /10));
+      height: calc(19.22au * (1em /10));
       animation-name: orbit;
-      animation-duration: calc(30687s /2);
+      animation-duration: calc(30687s / 3);
+      /* divided by 3 to fit the screen */
       animation-timing-function: linear;
       animation-iteration-count: infinite;
-      animation-delay: -15343s;
-      z-index: -1;
+      animation-delay: -10229s;
+      z-index: -5;
     }
 
     .uranus::before {
-      top: calc((19.22au /2) - (4em /2));
-      right: calc((19.22au /2) - (4em /2));
+      top: calc((19.22au * (1em /10) /2) - (4em /2));
+      right: calc((19.22au * (1em /10) /2) - (4em /2));
       width: calc(4em);
       height: calc(4em);
       background-color: cyan;
     }
 
     .neptune {
-      top: calc(15em - (0.1em /2));
-      left: calc(15em + (30.06au /2));
-      width: calc(30.06au);
-      height: calc(30.06au);
+      top: calc(50% - (0.1em /4));
+      left: calc(50% + (30.06au * (1em /10) /2));
+      width: calc(30.06au * (1em /10));
+      height: calc(30.06au * (1em /10));
       animation-name: orbit;
-      animation-duration: calc(60190s / 3);
-      /* divided by 3 to fit the screen */
+      animation-duration: calc(60190s / 6);
+      /* divided by 6 to fit the screen */
       animation-timing-function: linear;
       animation-iteration-count: infinite;
-      animation-delay: -30095s;
-      z-index: -1;
+      animation-delay: -10032s;
+      z-index: -6;
     }
 
     .neptune::before {
-      top: calc((30.06au /2) - (3.88em /2));
-      right: calc((30.06au /2) - (3.88em /2));
+      top: calc((30.06au * (1em /10) / 6) / 2 - 3.88em / 2);
+      right: calc((30.06au * (1em /10) / 6) / 2 - 3.88em / 2);
       width: calc(3.88em);
       height: calc(3.88em);
       background-color: blue;
