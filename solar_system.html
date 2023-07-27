@@ -14,15 +14,15 @@
 
     .container {
       font-size: 10px;
-      width: 80em;
-      height: 80em;
+      width: 50em;
+      height: 50em;
       position: relative;
     }
 
     .sun {
       position: absolute;
-      top: calc(50% - (5em /2));
-      left: calc(50% - (5em /2));
+      top: calc(50% - 2.5em);
+      left: calc(50% - 2.5em);
       width: 5em;
       height: 5em;
       background-color: yellow;
@@ -34,7 +34,7 @@
       position: absolute;
       border-style: solid;
       border-color: white transparent transparent transparent;
-      border-width: calc(0.1em /2);
+      border-width: calc(0.1em / 2);
     }
 
     .planet::before {
@@ -43,220 +43,199 @@
       border-radius: 50%;
     }
 
-    .mercury {
-      top: calc(50% - (0.1em /4));
-      left: calc(50% + (0.39au * (1em /10) /2));
-      width: calc(0.39au * (1em /10));
-      height: calc(0.39au * (1em /10));
-      animation-name: orbit;
-      animation-duration: calc(87.97s /2);
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
+    .planet.mercury {
+      top: calc(50% - 0.3em);
+      left: calc(50% + 1.2em);
+      width: 0.6em;
+      height: 0.6em;
+      animation: orbit 6s linear infinite, rotate 2s linear infinite;
+      animation-delay: -2s;
       z-index: 1;
     }
 
-    .mercury::before {
-      top: calc((0.39au * (1em /10) /2) - (0.38em /2));
-      right: calc((0.39au * (1em /10) /2) - (0.38em /2));
-      width: calc(0.38em);
-      height: calc(0.38em);
+    .planet.mercury::before {
+      top: calc(50% - 0.1em);
+      right: calc(50% - 0.1em);
+      width: 0.2em;
+      height: 0.2em;
       background-color: gray;
     }
 
-    .venus {
-      top: calc(50% - (0.1em /4));
-      left: calc(50% + (0.72au * (1em /10) /2));
-      width: calc(0.72au * (1em /10));
-      height: calc(0.72au * (1em /10));
-      animation-name: orbit;
-      animation-duration: calc(224.70s /2);
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
-      animation-delay: -112s;
-      z-index: 1;
+    .planet.venus {
+      top: calc(50% - 0.5em);
+      left: calc(50% + 3em);
+      width: 0.8em;
+      height: 0.8em;
+      animation: orbit 10s linear infinite, rotate 3s linear infinite;
+      animation-delay: -4s;
+      z-index: 2;
     }
 
-    .venus::before {
-      top: calc((0.72au * (1em /10) /2) - (0.95em /2));
-      right: calc((0.72au * (1em /10) /2) - (0.95em /2));
-      width: calc(0.95em);
-      height: calc(0.95em);
+    .planet.venus::before {
+      top: calc(50% - 0.3em);
+      right: calc(50% - 0.3em);
+      width: 0.3em;
+      height: 0.3em;
       background-color: brown;
     }
 
-    .earth {
-      top: calc(50% - (0.1em /4));
-      left: calc(50% + (1au * (1em /10) /2));
-      width: calc(1au * (1em /10));
-      height: calc(1au * (1em /10));
-      animation-name: orbit;
-      animation-duration: calc(365s /2);
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
+    .planet.earth {
+      top: calc(50% - 0.7em);
+      left: calc(50% + 5em);
+      width: 1em;
+      height: 1em;
+      animation: orbit 15s linear infinite, rotate 5s linear infinite;
+      animation-delay: -6s;
       z-index: -1;
     }
 
-    .moon {
+    .planet.moon {
       position: absolute;
-      top: calc((1au * (1em /10) /2) - (0.08em /4));
-      right: calc((1au * (1em /10) /2) - (0.08em /4));
-      width: calc(0.08au * (1em /10));
-      height: calc(0.08au * (1em /10));
+      top: calc(50% - 0.08em);
+      right: calc(50% - 0.08em);
+      width: 0.16em;
+      height: 0.16em;
       border-style: solid;
       border-color: white transparent transparent transparent;
-      border-width: calc(0.08em /8);
+      border-width: calc(0.08em / 4);
       border-radius: 50%;
-      transform-origin: calc((1au * (1em /10) /4) + (0.08au * (1em /10) /4));
-      animation-name: orbit;
-      animation-duration: 27s;
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
+      transform-origin: calc(50% + 0.08em) 50%;
+      animation: orbit 3s linear infinite, rotate 1s linear infinite;
+      animation-delay: -1.5s;
       z-index: -1;
     }
 
-    .earth::before {
-      top: calc((1au * (1em /10) /2) - (1em /2));
-      right: calc((1au * (1em /10) /2) - (1em /2));
-      width: calc(1em);
-      height: calc(1em);
+    .planet.earth::before {
+      top: calc(50% - 0.4em);
+      right: calc(50% - 0.4em);
+      width: 0.4em;
+      height: 0.4em;
       background-color: aqua;
     }
 
-    .moon::before {
-      top: calc((0.08au * (1em /10) /2) - (0.27em /2));
-      right: calc((0.08au * (1em /10) /2) - (0.27em /2));
-      width: calc(0.27em);
-      height: calc(0.27em);
+    .planet.moon::before {
+      top: calc(50% - 0.13em);
+      right: calc(50% - 0.13em);
+      width: 0.26em;
+      height: 0.26em;
       background-color: silver;
     }
 
-    .mars {
-      top: calc(50% - (0.1em /4));
-      left: calc(50% + (1.52au * (1em /10) /2));
-      width: calc(1.52au * (1em /10));
-      height: calc(1.52au * (1em /10));
-      animation-name: orbit;
-      animation-duration: calc(687s /2);
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
-      animation-delay: -343s;
+    .planet.mars {
+      top: calc(50% - 1em);
+      left: calc(50% + 7em);
+      width: 1.2em;
+      height: 1.2em;
+      animation: orbit 20s linear infinite, rotate 6s linear infinite;
+      animation-delay: -8s;
       z-index: -2;
     }
 
-    .mars::before {
-      top: calc((1.52au * (1em /10) /2) - (0.53em /2));
-      right: calc((1.52au * (1em /10) /2) - (0.53em /2));
-      width: calc(0.53em);
-      height: calc(0.53em);
+    .planet.mars::before {
+      top: calc(50% - 0.4em);
+      right: calc(50% - 0.4em);
+      width: 0.4em;
+      height: 0.4em;
       background-color: red;
     }
 
-    .jupiter {
-      top: calc(50% - (0.1em /4));
-      left: calc(50% + (5.2au * (1em /10) /2));
-      width: calc(5.2au * (1em /10));
-      height: calc(5.2au * (1em /10));
-      animation-name: orbit;
-      animation-duration: calc(4333s /2);
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
-      animation-delay: -2166s;
+    .planet.jupiter {
+      top: calc(50% - 1.8em);
+      left: calc(50% + 10em);
+      width: 2.4em;
+      height: 2.4em;
+      animation: orbit 30s linear infinite, rotate 10s linear infinite;
+      animation-delay: -12s;
       z-index: -3;
     }
 
-    .jupiter::before {
-      top: calc((5.2au * (1em /10) /2) - (11.21em /2));
-      right: calc((5.2au * (1em /10) /2) - (11.21em /2));
-      width: calc(11.21em);
-      height: calc(11.21em);
+    .planet.jupiter::before {
+      top: calc(50% - 1.2em);
+      right: calc(50% - 1.2em);
+      width: 1.2em;
+      height: 1.2em;
       background-color: brown;
     }
 
-    .saturn {
-      top: calc(50% - (0.1em /4));
-      left: calc(50% + (9.54au * (1em /10) /2));
-      width: calc(9.54au * (1em /10));
-      height: calc(9.54au * (1em /10));
-      animation-name: orbit;
-      animation-duration: calc(10759s / 3);
-      /* divided by 3 to fit the screen */
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
-      animation-delay: -3586s;
+    .planet.saturn {
+      top: calc(50% - 2.5em);
+      left: calc(50% + 14em);
+      width: 3.2em;
+      height: 3.2em;
+      animation: orbit 40s linear infinite, rotate 12s linear infinite;
+      animation-delay: -16s;
       z-index: -4;
     }
 
-    .saturn::before {
-      top: calc((9.54au * (1em /10) / 3) / 2 - 9.45em / 2);
-      right: calc((9.54au * (1em /10) / 3) / 2 - 9.45em / 2);
-      width: calc(9.45em);
-      height: calc(9.45em);
+    .planet.saturn::before {
+      top: calc(50% - 2.4em);
+      right: calc(50% - 2.4em);
+      width: 2.4em;
+      height: 2.4em;
       background-color: brown;
     }
 
-    .saturn::after {
+    .planet.saturn::after {
       content: '';
       position: absolute;
-      top: calc((9.54au * (1em /10) / 4) - 20em);
-      right: (9.54au * (1em /10) / 4);
-      width: (20em);
-      height: (20em);
-      border-radius: (50%);
+      top: calc(50% - 6em);
+      right: calc(50% - 6em);
+      width: 12em;
+      height: 12em;
+      border-radius: 50%;
       border-style: solid;
       border-color: white transparent transparent transparent;
-      border-width: (0.5em);
-      transform-origin: (10em 10em);
+      border-width: 0.5em;
+      transform-origin: 6em 6em;
       transform: rotate(-45deg);
       z-index: -4;
     }
 
-    .uranus {
-      top: calc(50% - (0.1em /4));
-      left: calc(50% + (19.22au * (1em /10) /2));
-      width: calc(19.22au * (1em /10));
-      height: calc(19.22au * (1em /10));
-      animation-name: orbit;
-      animation-duration: calc(30687s / 3);
-      /* divided by 3 to fit the screen */
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
-      animation-delay: -10229s;
+    .planet.uranus {
+      top: calc(50% - 3.8em);
+      left: calc(50% + 18em);
+      width: 4.2em;
+      height: 4.2em;
+      animation: orbit 50s linear infinite, rotate 15s linear infinite;
+      animation-delay: -20s;
       z-index: -5;
     }
 
-    .uranus::before {
-      top: calc((19.22au * (1em /10) /2) - (4em /2));
-      right: calc((19.22au * (1em /10) /2) - (4em /2));
-      width: calc(4em);
-      height: calc(4em);
+    .planet.uranus::before {
+      top: calc(50% - 2em);
+      right: calc(50% - 2em);
+      width: 2em;
+      height: 2em;
       background-color: cyan;
     }
 
-    .neptune {
-      top: calc(50% - (0.1em /4));
-      left: calc(50% + (30.06au * (1em /10) /2));
-      width: calc(30.06au * (1em /10));
-      height: calc(30.06au * (1em /10));
-      animation-name: orbit;
-      animation-duration: calc(60190s / 6);
-      /* divided by 6 to fit the screen */
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
-      animation-delay: -10032s;
+    .planet.neptune {
+      top: calc(50% - 4.4em);
+      left: calc(50% + 22em);
+      width: 5em;
+      height: 5em;
+      animation: orbit 60s linear infinite, rotate 18s linear infinite;
+      animation-delay: -24s;
       z-index: -6;
     }
 
-    .neptune::before {
-      top: calc((30.06au * (1em /10) / 6) / 2 - 3.88em / 2);
-      right: calc((30.06au * (1em /10) / 6) / 2 - 3.88em / 2);
-      width: calc(3.88em);
-      height: calc(3.88em);
+    .planet.neptune::before {
+      top: calc(50% - 1.94em);
+      right: calc(50% - 1.94em);
+      width: 1.94em;
+      height: 1.94em;
       background-color: blue;
     }
 
     @keyframes orbit {
       to {
         transform: rotate(360deg);
+      }
+    }
+
+    @keyframes rotate {
+      to {
+        transform: rotate(-360deg);
       }
     }
   </style>
